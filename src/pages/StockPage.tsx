@@ -33,7 +33,7 @@ export function StockPage({ products, onSuccess }: StockPageProps) {
         setMessage(null);
 
         const accountList = accounts
-            .split('\n')
+            .split(',')
             .map(a => a.trim())
             .filter(a => a.length > 0);
 
@@ -258,7 +258,7 @@ export function StockPage({ products, onSuccess }: StockPageProps) {
                             className="input"
                             value={accounts}
                             onChange={(e) => setAccounts(e.target.value)}
-                            placeholder="Masukkan akun (satu per baris)&#10;email1@gmail.com:password1&#10;email2@gmail.com:password2"
+                            placeholder="Masukkan akun (satu per koma)&#10;email1@gmail.com:password1&#10;email2@gmail.com:password2"
                             rows={6}
                             style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}
                         />
@@ -375,3 +375,4 @@ export function StockPage({ products, onSuccess }: StockPageProps) {
         </div>
     );
 }
+
